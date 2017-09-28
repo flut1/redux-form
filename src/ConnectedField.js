@@ -66,6 +66,10 @@ const createConnectedField = (structure: Structure<*, *>) => {
       return (
         nextPropsKeys.length !== thisPropsKeys.length ||
         nextPropsKeys.some(prop => {
+          if (prop === 'children') {
+            return this.props[prop] === nextProps[prop];
+          }
+          
           return (
             !~propsToNotUpdateFor.indexOf(prop) &&
             !deepEqual(this.props[prop], nextProps[prop])
