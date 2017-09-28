@@ -35,6 +35,7 @@
     "example:wizard": "form=wizard npm run example",
     "format": "prettier-eslint \"+(src|examples)/**/*.+(js|js.flow)\" --ignore \"**/bundle.js\" --write --no-semi --single-quote --trailing-comma=none",
     "prepublish": "npm run test && npm run test:flow && npm run clean && npm run build",
+    "postinstall": "npm run prepublish",
     "test": "mocha --compilers js:babel-register --recursive --recursive \"src/**/__tests__/*\" --require src/__tests__/setup.js",
     "test:flow": "flow check",
     "test:watch": "npm test -- --watch",
