@@ -218,7 +218,7 @@ var createConnectedField = function createConnectedField(structure) {
         var thisPropsKeys = Object.keys(this.props);
         return nextPropsKeys.length !== thisPropsKeys.length || nextPropsKeys.some(function (prop) {
           if (prop === 'children') {
-            return _this2.props[prop] === nextProps[prop];
+            return true;
           }
 
           return !~propsToNotUpdateFor.indexOf(prop) && !deepEqual(_this2.props[prop], nextProps[prop]);

@@ -63,7 +63,7 @@ const createConnectedFields = (structure: Structure<*, *>) => {
         nextPropsKeys.length !== thisPropsKeys.length ||
         nextPropsKeys.some(prop => {
           if (prop === 'children') {
-            return this.props[prop] === nextProps[prop];
+            return true;
           }
           
           return (
